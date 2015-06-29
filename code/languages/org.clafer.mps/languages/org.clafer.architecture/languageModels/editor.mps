@@ -32,12 +32,12 @@
     <import index="cu2c" ref="6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/f:java_stub#6ed54515-acc8-4d1e-a16c-9fd6cfe951ea#jetbrains.mps.smodel(MPS.Core/jetbrains.mps.smodel@java_stub)" />
     <import index="msyo" ref="6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/f:java_stub#6ed54515-acc8-4d1e-a16c-9fd6cfe951ea#jetbrains.mps.util(MPS.Core/jetbrains.mps.util@java_stub)" />
     <import index="d244" ref="r:0a882e21-5553-485b-8777-3b0ace5a0d84(com.mbeddr.core.base.pluginSolution.plugin)" />
-    <import index="tpck" ref="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" implicit="true" />
-    <import index="t3eg" ref="8865b7a8-5271-43d3-884c-6fd1d9cfdd34/f:java_stub#8865b7a8-5271-43d3-884c-6fd1d9cfdd34#org.jetbrains.mps.openapi.language(MPS.OpenAPI/org.jetbrains.mps.openapi.language@java_stub)" implicit="true" />
+    <import index="tpce" ref="r:00000000-0000-4000-0000-011c89590292(jetbrains.mps.lang.structure.structure)" implicit="true" />
+    <import index="f5o0" ref="r:1171adf6-5290-4933-a628-454c0319eff9(org.clafer.architecture.behavior)" implicit="true" />
     <import index="e2lb" ref="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.lang(JDK/java.lang@java_stub)" implicit="true" />
     <import index="ec5l" ref="8865b7a8-5271-43d3-884c-6fd1d9cfdd34/f:java_stub#8865b7a8-5271-43d3-884c-6fd1d9cfdd34#org.jetbrains.mps.openapi.model(MPS.OpenAPI/org.jetbrains.mps.openapi.model@java_stub)" implicit="true" />
-    <import index="f5o0" ref="r:1171adf6-5290-4933-a628-454c0319eff9(org.clafer.architecture.behavior)" implicit="true" />
-    <import index="tpce" ref="r:00000000-0000-4000-0000-011c89590292(jetbrains.mps.lang.structure.structure)" implicit="true" />
+    <import index="tpck" ref="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" implicit="true" />
+    <import index="t3eg" ref="8865b7a8-5271-43d3-884c-6fd1d9cfdd34/f:java_stub#8865b7a8-5271-43d3-884c-6fd1d9cfdd34#org.jetbrains.mps.openapi.language(MPS.OpenAPI/org.jetbrains.mps.openapi.language@java_stub)" implicit="true" />
   </imports>
   <registry>
     <language id="28f9e497-3b42-4291-aeba-0a1039153ab1" name="jetbrains.mps.lang.plugin">
@@ -265,6 +265,7 @@
       </concept>
       <concept id="1068581242869" name="jetbrains.mps.baseLanguage.structure.MinusExpression" flags="nn" index="3cpWsd" />
       <concept id="1068581242863" name="jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration" flags="nr" index="3cpWsn" />
+      <concept id="1068581517677" name="jetbrains.mps.baseLanguage.structure.VoidType" flags="in" index="3cqZAl" />
       <concept id="1081516740877" name="jetbrains.mps.baseLanguage.structure.NotExpression" flags="nn" index="3fqX7Q">
         <child id="1081516765348" name="expression" index="3fr31v" />
       </concept>
@@ -315,6 +316,7 @@
         <child id="8637411062076630380" name="connectionTypes" index="1xLlFP" />
         <child id="1981294357059564524" name="paletteSources" index="1RuSHk" />
       </concept>
+      <concept id="3462102746004176270" name="de.itemis.mps.editor.diagram.structure.DeleteHandler" flags="ig" index="2fs66k" />
       <concept id="9064581101900867235" name="de.itemis.mps.editor.diagram.structure.IEdgeEditor" flags="ng" index="ljJFv">
         <child id="2044706694575458564" name="labelCell" index="3kqczz" />
         <child id="8587703283523592228" name="endpointFrom" index="1PN8q7" />
@@ -336,6 +338,7 @@
       </concept>
       <concept id="6237710625713195816" name="de.itemis.mps.editor.diagram.structure.CellModel_DiagramNode" flags="ng" index="2ZK4vF">
         <child id="7464726264117682823" name="shape" index="2xQQDV" />
+        <child id="5725606875425244480" name="deleteHandler" index="1idfhu" />
         <child id="1315262826372527521" name="editor" index="1ytjkN" />
       </concept>
       <concept id="6237710625713831199" name="de.itemis.mps.editor.diagram.structure.CellModel_DiagramConnector" flags="ng" index="2ZMJ7s" />
@@ -1401,6 +1404,9 @@
       </node>
       <node concept="2xQOud" id="2Pv0$Q3A0nz" role="2xQQDV">
         <ref role="2xQOue" node="2HR3cafXJXP" resolve="ArchElementShape" />
+      </node>
+      <node concept="2fs66k" id="37pXzv3sQJD" role="1idfhu">
+        <node concept="3clFbS" id="37pXzv3sQJE" role="2VODD2" />
       </node>
     </node>
     <node concept="2aJ2om" id="6_lRZv9yZ$P" role="CpUAK">
@@ -2875,6 +2881,66 @@
                             </node>
                           </node>
                         </node>
+                        <node concept="3clFb_" id="5AvWRyC$sg6" role="jymVt">
+                          <property role="1EzhhJ" value="false" />
+                          <property role="TrG5h" value="drawIcon" />
+                          <node concept="3cqZAl" id="5AvWRyC$sg7" role="3clF45" />
+                          <node concept="3Tm1VV" id="5AvWRyC$sg8" role="1B3o_S" />
+                          <node concept="37vLTG" id="5AvWRyC$sg9" role="3clF46">
+                            <property role="TrG5h" value="g" />
+                            <node concept="3uibUv" id="5AvWRyC$sga" role="1tU5fm">
+                              <ref role="3uigEE" to="1t7x:~Graphics2D" resolve="Graphics2D" />
+                            </node>
+                          </node>
+                          <node concept="37vLTG" id="5AvWRyC$sgb" role="3clF46">
+                            <property role="TrG5h" value="bounds" />
+                            <node concept="3uibUv" id="5AvWRyC$sgc" role="1tU5fm">
+                              <ref role="3uigEE" to="ar19:~Rectangle2D" resolve="Rectangle2D" />
+                            </node>
+                          </node>
+                          <node concept="3clFbS" id="5AvWRyC$sgf" role="3clF47" />
+                        </node>
+                        <node concept="3clFb_" id="5AvWRyC$sgg" role="jymVt">
+                          <property role="1EzhhJ" value="false" />
+                          <property role="TrG5h" value="extend_AbstractConnectionType_instead_of_implementing_IConnectionType" />
+                          <node concept="3cqZAl" id="5AvWRyC$sgh" role="3clF45" />
+                          <node concept="3Tm1VV" id="5AvWRyC$sgi" role="1B3o_S" />
+                          <node concept="3clFbS" id="5AvWRyC$sgl" role="3clF47" />
+                        </node>
+                        <node concept="3clFb_" id="5AvWRyC$sgm" role="jymVt">
+                          <property role="1EzhhJ" value="false" />
+                          <property role="TrG5h" value="isValidEnd" />
+                          <node concept="10P_77" id="5AvWRyC$sgn" role="3clF45" />
+                          <node concept="3Tm1VV" id="5AvWRyC$sgo" role="1B3o_S" />
+                          <node concept="37vLTG" id="5AvWRyC$sgq" role="3clF46">
+                            <property role="TrG5h" value="endpoint" />
+                            <node concept="3uibUv" id="5AvWRyC$sgr" role="1tU5fm">
+                              <ref role="3uigEE" to="nkm5:6clvLV1YfKy" resolve="IConnectionEndpoint" />
+                            </node>
+                          </node>
+                          <node concept="3clFbS" id="5AvWRyC$sgt" role="3clF47">
+                            <node concept="3clFbF" id="5AvWRyC$sgv" role="3cqZAp">
+                              <node concept="3clFbT" id="5AvWRyC$sgu" role="3clFbG" />
+                            </node>
+                          </node>
+                        </node>
+                        <node concept="3clFb_" id="5AvWRyC$sgw" role="jymVt">
+                          <property role="1EzhhJ" value="false" />
+                          <property role="TrG5h" value="isValidStart" />
+                          <node concept="10P_77" id="5AvWRyC$sgx" role="3clF45" />
+                          <node concept="3Tm1VV" id="5AvWRyC$sgy" role="1B3o_S" />
+                          <node concept="37vLTG" id="5AvWRyC$sg$" role="3clF46">
+                            <property role="TrG5h" value="endpoint" />
+                            <node concept="3uibUv" id="5AvWRyC$sg_" role="1tU5fm">
+                              <ref role="3uigEE" to="nkm5:6clvLV1YfKy" resolve="IConnectionEndpoint" />
+                            </node>
+                          </node>
+                          <node concept="3clFbS" id="5AvWRyC$sgB" role="3clF47">
+                            <node concept="3clFbF" id="5AvWRyC$sgD" role="3cqZAp">
+                              <node concept="3clFbT" id="5AvWRyC$sgC" role="3clFbG" />
+                            </node>
+                          </node>
+                        </node>
                       </node>
                     </node>
                   </node>
@@ -3234,6 +3300,66 @@
                               <node concept="3clFbT" id="4jIombYjCEB" role="3clFbG">
                                 <property role="3clFbU" value="false" />
                               </node>
+                            </node>
+                          </node>
+                        </node>
+                        <node concept="3clFb_" id="5AvWRyC$r0g" role="jymVt">
+                          <property role="1EzhhJ" value="false" />
+                          <property role="TrG5h" value="drawIcon" />
+                          <node concept="3cqZAl" id="5AvWRyC$r0h" role="3clF45" />
+                          <node concept="3Tm1VV" id="5AvWRyC$r0i" role="1B3o_S" />
+                          <node concept="37vLTG" id="5AvWRyC$r0j" role="3clF46">
+                            <property role="TrG5h" value="g" />
+                            <node concept="3uibUv" id="5AvWRyC$r0k" role="1tU5fm">
+                              <ref role="3uigEE" to="1t7x:~Graphics2D" resolve="Graphics2D" />
+                            </node>
+                          </node>
+                          <node concept="37vLTG" id="5AvWRyC$r0l" role="3clF46">
+                            <property role="TrG5h" value="bounds" />
+                            <node concept="3uibUv" id="5AvWRyC$r0m" role="1tU5fm">
+                              <ref role="3uigEE" to="ar19:~Rectangle2D" resolve="Rectangle2D" />
+                            </node>
+                          </node>
+                          <node concept="3clFbS" id="5AvWRyC$r0p" role="3clF47" />
+                        </node>
+                        <node concept="3clFb_" id="5AvWRyC$r0q" role="jymVt">
+                          <property role="1EzhhJ" value="false" />
+                          <property role="TrG5h" value="extend_AbstractConnectionType_instead_of_implementing_IConnectionType" />
+                          <node concept="3cqZAl" id="5AvWRyC$r0r" role="3clF45" />
+                          <node concept="3Tm1VV" id="5AvWRyC$r0s" role="1B3o_S" />
+                          <node concept="3clFbS" id="5AvWRyC$r0v" role="3clF47" />
+                        </node>
+                        <node concept="3clFb_" id="5AvWRyC$r0w" role="jymVt">
+                          <property role="1EzhhJ" value="false" />
+                          <property role="TrG5h" value="isValidEnd" />
+                          <node concept="10P_77" id="5AvWRyC$r0x" role="3clF45" />
+                          <node concept="3Tm1VV" id="5AvWRyC$r0y" role="1B3o_S" />
+                          <node concept="37vLTG" id="5AvWRyC$r0$" role="3clF46">
+                            <property role="TrG5h" value="endpoint" />
+                            <node concept="3uibUv" id="5AvWRyC$r0_" role="1tU5fm">
+                              <ref role="3uigEE" to="nkm5:6clvLV1YfKy" resolve="IConnectionEndpoint" />
+                            </node>
+                          </node>
+                          <node concept="3clFbS" id="5AvWRyC$r0B" role="3clF47">
+                            <node concept="3clFbF" id="5AvWRyC$r0D" role="3cqZAp">
+                              <node concept="3clFbT" id="5AvWRyC$r0C" role="3clFbG" />
+                            </node>
+                          </node>
+                        </node>
+                        <node concept="3clFb_" id="5AvWRyC$r0E" role="jymVt">
+                          <property role="1EzhhJ" value="false" />
+                          <property role="TrG5h" value="isValidStart" />
+                          <node concept="10P_77" id="5AvWRyC$r0F" role="3clF45" />
+                          <node concept="3Tm1VV" id="5AvWRyC$r0G" role="1B3o_S" />
+                          <node concept="37vLTG" id="5AvWRyC$r0I" role="3clF46">
+                            <property role="TrG5h" value="endpoint" />
+                            <node concept="3uibUv" id="5AvWRyC$r0J" role="1tU5fm">
+                              <ref role="3uigEE" to="nkm5:6clvLV1YfKy" resolve="IConnectionEndpoint" />
+                            </node>
+                          </node>
+                          <node concept="3clFbS" id="5AvWRyC$r0L" role="3clF47">
+                            <node concept="3clFbF" id="5AvWRyC$r0N" role="3cqZAp">
+                              <node concept="3clFbT" id="5AvWRyC$r0M" role="3clFbG" />
                             </node>
                           </node>
                         </node>
