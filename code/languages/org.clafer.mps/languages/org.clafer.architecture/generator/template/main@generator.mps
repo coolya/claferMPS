@@ -7,21 +7,21 @@
     <use id="b401a680-8325-4110-8fd3-84331ff25bef" name="jetbrains.mps.lang.generator" version="-1" />
     <use id="137e622e-709a-48af-8f85-420e945711de" name="org.clafer.core" version="-1" />
     <use id="ceab5195-25ea-4f22-9b92-103b95ca8c0c" name="jetbrains.mps.lang.core" version="1" />
-    <use id="d4280a54-f6df-4383-aa41-d1b2bffa7eb1" name="com.mbeddr.core.base" version="-1" />
     <use id="61c69711-ed61-4850-81d9-7714ff227ff0" name="org.clafer.expr" version="-1" />
     <use id="13744753-c81f-424a-9c1b-cf8943bf4e86" name="jetbrains.mps.lang.sharedConcepts" version="-1" />
+    <use id="d4280a54-f6df-4383-aa41-d1b2bffa7eb1" name="com.mbeddr.core.base" version="2" />
     <devkit ref="fbc25dd2-5da4-483a-8b19-70928e1b62d7(jetbrains.mps.devkit.general-purpose)" />
   </languages>
   <imports>
     <import index="ddau" ref="r:99aabafd-847f-465c-9fb1-dde7fec9a0d0(org.clafer.architecture.structure)" />
     <import index="ti9i" ref="r:a9e3049e-43ec-4971-9d1d-9eabcb0829f2(ArchBaseConcepts.BaseConcepts)" />
     <import index="ul4y" ref="642f71f8-327a-425b-84f9-44ad58786d27/f:project#9dbd68bc-cb8b-44b4-bf6f-cd9789fe46b4(jetbrains.mps.lang.project.modules/module.ArchBaseConcepts@project_stub)" />
+    <import index="mecy" ref="r:bf75342d-291a-4d28-8aca-7b2cc474681b(org.clafer.core.structure)" implicit="true" />
     <import index="tpck" ref="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" implicit="true" />
     <import index="f5p9" ref="r:2feaea5e-53bc-4a89-a5e6-4b641151a82e(org.clafer.core.behavior)" implicit="true" />
-    <import index="mecy" ref="r:bf75342d-291a-4d28-8aca-7b2cc474681b(org.clafer.core.structure)" implicit="true" />
-    <import index="t3eg" ref="8865b7a8-5271-43d3-884c-6fd1d9cfdd34/f:java_stub#8865b7a8-5271-43d3-884c-6fd1d9cfdd34#org.jetbrains.mps.openapi.language(MPS.OpenAPI/org.jetbrains.mps.openapi.language@java_stub)" implicit="true" />
-    <import index="mj1k" ref="r:c371cf98-dcc8-4a43-8eb8-8a8096de18b3(org.clafer.expr.structure)" implicit="true" />
     <import index="tpce" ref="r:00000000-0000-4000-0000-011c89590292(jetbrains.mps.lang.structure.structure)" implicit="true" />
+    <import index="c17a" ref="8865b7a8-5271-43d3-884c-6fd1d9cfdd34/java:org.jetbrains.mps.openapi.language(MPS.OpenAPI/)" implicit="true" />
+    <import index="mj1k" ref="r:c371cf98-dcc8-4a43-8eb8-8a8096de18b3(org.clafer.expr.structure)" implicit="true" />
   </imports>
   <registry>
     <language id="f3061a53-9226-4cc5-a443-f952ceaf5816" name="jetbrains.mps.baseLanguage">
@@ -241,7 +241,7 @@
         <reference id="1145383142433" name="elementConcept" index="2I9WkF" />
       </concept>
       <concept id="1171323947159" name="jetbrains.mps.lang.smodel.structure.Model_NodesOperation" flags="nn" index="2SmgA7">
-        <reference id="1171323947160" name="concept" index="2SmgA8" />
+        <child id="1758937410080001570" name="conceptArgument" index="1dBWTz" />
       </concept>
       <concept id="1145567426890" name="jetbrains.mps.lang.smodel.structure.SNodeListCreator" flags="nn" index="2T8Vx0">
         <child id="1145567471833" name="createdType" index="2T96Bj" />
@@ -398,7 +398,9 @@
                   <node concept="1r8y6K" id="4aL7gvppUWW" role="2OqNvi" />
                 </node>
                 <node concept="2SmgA7" id="4aL7gvppUWX" role="2OqNvi">
-                  <ref role="2SmgA8" to="mecy:bl22kSm_0N" resolve="ClaferModule" />
+                  <node concept="chp4Y" id="5TCmH29Zsgr" role="1dBWTz">
+                    <ref role="cht4Q" to="mecy:bl22kSm_0N" resolve="ClaferModule" />
+                  </node>
                 </node>
               </node>
               <node concept="3zZkjj" id="4aL7gvppUWY" role="2OqNvi">
@@ -777,7 +779,7 @@
                       <node concept="2yIwOk" id="4aL7gvpx1US" role="2OqNvi" />
                     </node>
                     <node concept="liA8E" id="4aL7gvpx1UT" role="2OqNvi">
-                      <ref role="37wK5l" to="t3eg:~SAbstractConcept.getName():java.lang.String" resolve="getName" />
+                      <ref role="37wK5l" to="c17a:~SAbstractConcept.getName():java.lang.String" resolve="getName" />
                     </node>
                   </node>
                 </node>
@@ -886,7 +888,7 @@
                       <node concept="2yIwOk" id="4aL7gvpx2mT" role="2OqNvi" />
                     </node>
                     <node concept="liA8E" id="4aL7gvpx2mU" role="2OqNvi">
-                      <ref role="37wK5l" to="t3eg:~SAbstractConcept.getName():java.lang.String" resolve="getName" />
+                      <ref role="37wK5l" to="c17a:~SAbstractConcept.getName():java.lang.String" resolve="getName" />
                     </node>
                   </node>
                 </node>
@@ -1485,7 +1487,7 @@
                       <node concept="2yIwOk" id="44ORmASKEnO" role="2OqNvi" />
                     </node>
                     <node concept="liA8E" id="44ORmASKFlu" role="2OqNvi">
-                      <ref role="37wK5l" to="t3eg:~SAbstractConcept.getName():java.lang.String" resolve="getName" />
+                      <ref role="37wK5l" to="c17a:~SAbstractConcept.getName():java.lang.String" resolve="getName" />
                     </node>
                   </node>
                   <node concept="37vLTw" id="44ORmASMcBy" role="3ElQJh">
